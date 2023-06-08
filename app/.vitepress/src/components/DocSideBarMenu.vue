@@ -65,12 +65,12 @@ const clickMenuItem = (id: string) => {
           @click.stop="clickMenuItem(item.link)"
         >
           <div
-            @click="item.children ? toggleVisibleSecond(!isOpenSecond) : ''"
             :class="{
               open: isOpenSecond,
               active: isActive,
               secondary: item.children,
             }"
+            @click="item.children ? toggleVisibleSecond(!isOpenSecond) : ''"
           >
             {{ item.label }}
             <OIcon class="menu-title-icon" v-if="item.children">

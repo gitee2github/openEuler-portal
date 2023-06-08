@@ -196,9 +196,11 @@ const floatData = ref([
     link: 'https://qa-robot.openeuler.org/',
   },
   {
-    img: IconChat,
+    img: computed(() => {
+      return IconChat;
+    }),
     text: '欧拉 论坛',
-    id: 'robot',
+    id: 'forum',
     link: 'https://forum.openeuler.org/',
   },
 ]);
@@ -239,7 +241,12 @@ onMounted(() => {
       <div class="atom">
         <p class="atom-text">{{ i18n.common.FOOTER.ATOM_TEXT }}</p>
         <a href="https://openatom.cn" target="_blank">
-          <img :src="LogoAtom"  rel="noopener noreferrer" class="atom-logo" alt="openEuler" />
+          <img
+            :src="LogoAtom"
+            rel="noopener noreferrer"
+            class="atom-logo"
+            alt="openEuler"
+          />
         </a>
       </div>
     </AppContent>
